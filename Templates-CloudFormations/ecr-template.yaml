@@ -1,0 +1,10 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: AWS CloudFormation template for ECR
+Resources:
+  ECRRepository:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: "fargate-nodejs-app"
+      ImageTagMutability: IMMUTABLE
+      ImageScanningConfiguration:
+        scanOnPush: false

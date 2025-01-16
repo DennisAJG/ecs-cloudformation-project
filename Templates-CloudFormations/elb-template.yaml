@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: AWS CloudFormation template for ECR
+Resources:
+  LoadBalancer:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+    Properties:
+     Name: "fna-elb"
+     Subnets:
+       - !Ref PublicSubnet1
+       - !Ref PublicSubnet2
+     SecurityGroups:
+       - !Ref LoadBalancerSecurityGroup 
+     IpAddressType: "ipv4"
